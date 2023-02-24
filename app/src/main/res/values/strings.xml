@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TestShopApplication</string>
+    <string name="welcome_back_header"><b>Welcome back</b></string>
+    <string name="first_name_hint">First name</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_text">Sign in</string>
+    <string name="login_text">Login</string>
+    <string name="sign_in_header">Sign in</string>
+    <string name="email_hint">Email</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_apple">Sign in with Apple</string>
 </resources>
