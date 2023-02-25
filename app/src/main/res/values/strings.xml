@@ -22,4 +22,18 @@
     <string name="restore">Restore Purchase</string>
     <string name="help">Help</string>
     <string name="log_out">Log out</string>
+    <string name="trade_by"><b>Trade by bata</b></string>
+    <string name="location">Location</string>
+    <string name="what_are_you_looking_for"><b>What are you looking for?</b></string>
+    <string name="play_station_5_console">Play Station 5 console</string>
+    <string name="_90_000">$90,000</string>
+    <string name="games">Games</string>
+    <string name="latest"><b>Latest</b></string>
+    <string name="view_all">View all</string>
+    <string name="phone">Phones</string>
+    <string name="_30_off">30% off</string>
+    <string name="kids">Kids</string>
+    <string name="new_balance_sneakers">New balance sneakers</string>
+    <string name="flash_sale"><b>Flash Sale</b></string>
+    <string name="brands"><b>Brands</b></string>
 </resources>
