@@ -36,4 +36,5 @@
     <string name="new_balance_sneakers">New balance sneakers</string>
     <string name="flash_sale"><b>Flash Sale</b></string>
     <string name="brands"><b>Brands</b></string>
+    <string name="not_tz_part">Не является частью тз :_(</string>
 </resources>
