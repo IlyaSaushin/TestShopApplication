@@ -1,0 +1,57 @@
+object Versions {
+    const val core = "1.7.0"
+    const val appCompat = "1.6.1"
+    const val material = "1.8.0"
+    const val constraintLayout = "2.1.4"
+    const val junit = "4.13.2"
+    const val androidJunit = "1.1.5"
+    const val espresso = "3.5.1"
+    const val dagger2 = "2.45"
+    const val retrofit = "2.9.0"
+    const val room = "2.4.3"
+    const val coroutines = "1.6.4"
+    const val viewModel = "2.5.1"
+    const val fragment = "1.5.4"
+    const val lifecycleRuntime = "2.5.1"
+    const val serialization = "1.4.1"
+}
+
+object Dependencies {
+    const val core = "androidx.core:core-ktx:${Versions.core}"
+    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+    const val material = "com.google.android.material:material:${Versions.material}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+}
+
+object TestDependencies {
+    const val junit = "junit:junit:${Versions.junit}"
+    const val androidJunit = "androidx.test.ext:junit:${Versions.androidJunit}"
+    const val androidEspresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+}
+
+object Dagger2 {
+    const val dagger = "com.google.dagger:dagger:${Versions.dagger2}"
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger2}"
+}
+
+object Retrofit {
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.retrofit}"
+    const val retrofitCoroutineAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofit}"
+}
+
+object Room {
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomKapt = "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+    const val roomTest = "androidx.room:room-testing:${Versions.room}"
+}
+
+object LifecycleComponents {
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
+    const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+    const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
+    const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.serialization}"
+}
