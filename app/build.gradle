@@ -38,6 +38,11 @@ android {
 
 dependencies {
 
+    implementation project (":authorization:auth_presentation")
+    implementation project (":authorization:auth_domain")
+    implementation project (":authorization:auth_data")
+    implementation project (":common:utils")
+
     implementation Dependencies.core
     implementation Dependencies.appCompat
     implementation Dependencies.material
@@ -49,4 +54,16 @@ dependencies {
     // dagger2
     implementation Dagger2.dagger
     kapt Dagger2.daggerCompiler
+
+    // retrofit
+    implementation Retrofit.retrofit
+    implementation Retrofit.retrofitGsonConverter
+    implementation Retrofit.retrofitCoroutineAdapter
+    implementation Retrofit.okHttpLoggingInterceptor
+
+    // room
+    implementation Room.roomRuntime
+    kapt Room.roomKapt
+    implementation Room.roomKtx
+    implementation Room.roomTest
 }

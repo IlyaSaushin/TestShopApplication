@@ -33,9 +33,12 @@ android {
 
 dependencies {
 
+    implementation project(":authorization:auth_domain")
+    implementation project(":common:utils")
+
     implementation Dependencies.core
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    testImplementation TestDependencies.junit
+    androidTestImplementation TestDependencies.androidEspresso
 
     // retrofit
     implementation Retrofit.retrofit
@@ -48,4 +51,12 @@ dependencies {
     kapt Room.roomKapt
     implementation Room.roomKtx
     implementation Room.roomTest
+
+    // dagger2
+    implementation Dagger2.dagger
+    kapt Dagger2.daggerCompiler
+
+    // lifecycle
+    implementation LifecycleComponents.coroutines
+    implementation LifecycleComponents.lifecycleRuntime
 }

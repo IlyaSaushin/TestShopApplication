@@ -16,6 +16,8 @@
             <option value="$PROJECT_DIR$/authorization/auth_domain" />
             <option value="$PROJECT_DIR$/authorization/auth_presentation" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/common/utils" />
             <option value="$PROJECT_DIR$/profile" />
             <option value="$PROJECT_DIR$/profile/profile_data" />
             <option value="$PROJECT_DIR$/profile/profile_domain" />

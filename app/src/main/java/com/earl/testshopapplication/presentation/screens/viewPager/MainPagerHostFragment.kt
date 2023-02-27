@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.earl.testshopapplication.R
 import com.earl.testshopapplication.databinding.FragmentPagerHostBinding
-import com.earl.testshopapplication.presentation.core.BaseFragment
+import com.earl.utils.coreUi.BaseFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainPagerHostFragment : BaseFragment<FragmentPagerHostBinding>() {

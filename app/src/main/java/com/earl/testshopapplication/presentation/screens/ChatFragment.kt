@@ -3,7 +3,7 @@ package com.earl.testshopapplication.presentation.screens
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.earl.testshopapplication.databinding.FragmentChatBinding
-import com.earl.testshopapplication.presentation.core.BaseFragment
+import com.earl.utils.coreUi.BaseFragment
 
 class ChatFragment : BaseFragment<FragmentChatBinding>() {
 

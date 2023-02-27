@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -28,9 +29,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
+
+    implementation project(":common:utils")
+    implementation project(":authorization:auth_domain")
+    implementation project(":authorization:auth_data")
 
     implementation Dependencies.core
     implementation Dependencies.appCompat
@@ -39,4 +47,14 @@ dependencies {
     testImplementation TestDependencies.junit
     androidTestImplementation TestDependencies.androidJunit
     androidTestImplementation TestDependencies.androidEspresso
+
+    // lifecycle
+    implementation LifecycleComponents.coroutines
+    implementation LifecycleComponents.viewModel
+    implementation LifecycleComponents.fragment
+    implementation LifecycleComponents.lifecycleRuntime
+
+    // dagger2
+    implementation Dagger2.dagger
+    kapt Dagger2.daggerCompiler
 }
