@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_header">24sp</dimen>
+    <dimen name="text_size_auth_edit_text">14sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="user_name_text_size">16sp</dimen>
+    <dimen name="text_size3">18sp</dimen>
+    <dimen name="auth_ed_padding">8dp</dimen>
+    <dimen name="margin_horizontal_auth">40dp</dimen>
+    <dimen name="margin_between_ad_auth">30dp</dimen>
+    <dimen name="margin2">30dp</dimen>
+    <dimen name="margin1">20dp</dimen>
+    <dimen name="margin">10dp</dimen>
+    <dimen name="margin_profile_btn">335dp</dimen>
+</resources>

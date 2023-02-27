@@ -3,10 +3,12 @@ package com.earl.testshopapplication.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.earl.auth_presentation.prensentation.ui.login.LogInFragment
+import com.earl.auth_presentation.prensentation.ui.signIn.SignInFragment
 import com.earl.testshopapplication.R
-import com.earl.testshopapplication.presentation.core.NavigationContract
 import com.earl.testshopapplication.presentation.screens.*
 import com.earl.testshopapplication.presentation.screens.viewPager.MainPagerHostFragment
+import com.earl.utils.coreUi.NavigationContract
 
 class MainActivity : AppCompatActivity(), NavigationContract {
     override fun onCreate(savedInstanceState: Bundle?) {

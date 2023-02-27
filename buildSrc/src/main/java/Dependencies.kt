@@ -8,6 +8,8 @@ object Versions {
     const val espresso = "3.5.1"
     const val dagger2 = "2.45"
     const val retrofit = "2.9.0"
+    const val retrofitCoroutinesAdapter = "0.9.2"
+    const val httpLoggingInterceptor = "4.9.0"
     const val room = "2.4.3"
     const val coroutines = "1.6.4"
     const val viewModel = "2.5.1"
@@ -37,8 +39,8 @@ object Dagger2 {
 object Retrofit {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
-    const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.retrofit}"
-    const val retrofitCoroutineAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofit}"
+    const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.httpLoggingInterceptor}"
+    const val retrofitCoroutineAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesAdapter}"
 }
 
 object Room {
