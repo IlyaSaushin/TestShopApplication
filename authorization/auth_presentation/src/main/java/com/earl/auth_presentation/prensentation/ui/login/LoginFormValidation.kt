@@ -20,7 +20,7 @@ interface LoginFormValidation {
                 firstName.error = context.getString(R.string.empty_string_err)
                 validation = false
             } else if (email.text.toString().trim().isEmpty()) {
-                firstName.error = context.getString(R.string.empty_string_err)
+                email.error = context.getString(R.string.empty_string_err)
                 validation = false
             } else if (!email.text.toString().isEmailValid()) {
                 email.error = context.getString(R.string.shor_pass_err)

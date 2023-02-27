@@ -2,6 +2,7 @@ package com.earl.testshopapplication.di
 
 import android.app.Application
 import com.earl.auth_presentation.di.AuthComponent
+import com.earl.profile_presentation.di.ProfileComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -23,4 +24,6 @@ interface AppComponent {
     }
 
     fun authComponent() : AuthComponent.Factory
+
+    fun profileComponent() : ProfileComponent.Factory
 }

@@ -2,6 +2,7 @@ package com.earl.testshopapplication.presentation.screens.viewPager
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.earl.profile_presentation.ui.ProfileFragment
 import com.earl.testshopapplication.presentation.screens.*
 
 class ViewPagerAdapter(fa: Fragment) : FragmentStateAdapter(fa) {

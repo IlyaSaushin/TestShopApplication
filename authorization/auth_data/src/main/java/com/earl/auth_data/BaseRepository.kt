@@ -17,7 +17,6 @@ import com.earl.utils.remoteDataSource.NetworkService
 import javax.inject.Inject
 
 class BaseRepository @Inject constructor(
-    private val networkService: NetworkService,
     private val usersDatabaseDao: UsersDbDao,
     private val userRegisterValuesDomainToDataMapper: UserRegisterValuesDomainToDataMapper<UserRegisterValuesData>,
     private val userLoginDataToDbMapper: UserRegisterValuesDataToDbMapper<UserLoginDb>,
