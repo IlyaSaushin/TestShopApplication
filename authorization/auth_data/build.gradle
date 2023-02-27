@@ -40,12 +40,6 @@ dependencies {
     testImplementation TestDependencies.junit
     androidTestImplementation TestDependencies.androidEspresso
 
-    // retrofit
-    implementation Retrofit.retrofit
-    implementation Retrofit.retrofitGsonConverter
-    implementation Retrofit.retrofitCoroutineAdapter
-    implementation Retrofit.okHttpLoggingInterceptor
-
     // room
     implementation Room.roomRuntime
     kapt Room.roomKapt

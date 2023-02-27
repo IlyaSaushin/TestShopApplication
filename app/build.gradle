@@ -41,6 +41,9 @@ dependencies {
     implementation project (":authorization:auth_presentation")
     implementation project (":authorization:auth_domain")
     implementation project (":authorization:auth_data")
+    implementation project (":profile:profile_data")
+    implementation project (":profile:profile_domain")
+    implementation project (":profile:profile_presentation")
     implementation project (":common:utils")
 
     implementation Dependencies.core

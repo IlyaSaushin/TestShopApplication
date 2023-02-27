@@ -32,14 +32,12 @@ class AuthorizationMainModule {
     @AuthScope
     @Provides
     fun provideRepository(
-        service: NetworkService,
         usersDatabaseDao: UsersDbDao,
         userRegisterValuesDomainToDataMapper: UserRegisterValuesDomainToDataMapper<UserRegisterValuesData>,
         userLoginDataToDbMapper: UserRegisterValuesDataToDbMapper<UserLoginDb>,
         userLoginValuesDomainToDataMapper: UserLoginValuesDomainToDataMapper<UserLoginValuesData>
     ) : Repository {
         return BaseRepository(
-            service,
             usersDatabaseDao,
             userRegisterValuesDomainToDataMapper,
             userLoginDataToDbMapper,

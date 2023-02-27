@@ -16,6 +16,7 @@ object Versions {
     const val fragment = "1.5.4"
     const val lifecycleRuntime = "2.5.1"
     const val serialization = "1.4.1"
+    const val roundImages = "2.3.0"
 }
 
 object Dependencies {
@@ -56,4 +57,8 @@ object LifecycleComponents {
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
     const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.serialization}"
+}
+
+object RoundImages {
+    const val roundImage = "com.makeramen:roundedimageview:${Versions.roundImages}"
 }

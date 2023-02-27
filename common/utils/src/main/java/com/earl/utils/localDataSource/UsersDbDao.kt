@@ -17,4 +17,7 @@ interface UsersDbDao {
 
     @Query("select * from userLoginData where firstname =:usersFirstname and email =:usersEmail")
     fun checkIsUserAlreadyRegisteredByLoginValues(usersFirstname: String, usersEmail: String) : List<UserLoginDb>
+
+    @Query("delete from userLoginData")
+    fun removeUserDataFromLDb()
 }
