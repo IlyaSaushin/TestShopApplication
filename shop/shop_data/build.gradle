@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.earl.shop_data'
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 28
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project(":shop:shop_domain")
+    implementation project(":common:utils")
+
+    implementation Dependencies.core
+    testImplementation TestDependencies.junit
+    androidTestImplementation TestDependencies.androidEspresso
+
+    // room
+    implementation Room.roomRuntime
+    kapt Room.roomKapt
+    implementation Room.roomKtx
+    implementation Room.roomTest
+
+    // dagger2
+    implementation Dagger2.dagger
+    kapt Dagger2.daggerCompiler
+
+    // lifecycle
+    implementation LifecycleComponents.coroutines
+    implementation LifecycleComponents.lifecycleRuntime
+
+    // retrofit
+    implementation Retrofit.retrofit
+    implementation Retrofit.okHttpLoggingInterceptor
+    implementation Retrofit.retrofitCoroutineAdapter
+    implementation Retrofit.retrofitGsonConverter
+}
