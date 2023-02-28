@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.PagerAdapter
 import com.earl.testshopapplication.R
 import com.earl.testshopapplication.databinding.FragmentPagerHostBinding
 import com.earl.utils.coreUi.BaseFragment
@@ -26,6 +27,7 @@ class MainPagerHostFragment : BaseFragment<FragmentPagerHostBinding>() {
         val pager = binding.pager
         val tabs = binding.tabs
         pager.adapter = pagerAdapter
+        pager.isUserInputEnabled = false;
         TabLayoutMediator(tabs, pager) { tab, pos ->
             when(pos) {
                 0 -> tab.setIcon(R.drawable.home_tab)

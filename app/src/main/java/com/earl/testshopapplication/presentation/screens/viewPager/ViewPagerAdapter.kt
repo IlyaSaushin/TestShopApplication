@@ -7,11 +7,11 @@ import com.earl.testshopapplication.presentation.screens.*
 
 class ViewPagerAdapter(fa: Fragment) : FragmentStateAdapter(fa) {
 
-    override fun getItemCount() = 5
+    override fun getItemCount() = TABS_COUNT
 
     override fun createFragment(position: Int): Fragment {
         return when(position) {
-            0 -> HomeFragment.newInstance()
+            0 -> com.earl.shop_presentation.ui.ShopFragment.newInstance()
             1 -> FavoriteFragment.newInstance()
             2 -> BasketFragment.newInstance()
             3 -> ChatFragment.newInstance()

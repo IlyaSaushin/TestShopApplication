@@ -17,6 +17,7 @@ object Versions {
     const val lifecycleRuntime = "2.5.1"
     const val serialization = "1.4.1"
     const val roundImages = "2.3.0"
+    const val glide = "4.15.0"
 }
 
 object Dependencies {
@@ -61,4 +62,9 @@ object LifecycleComponents {
 
 object RoundImages {
     const val roundImage = "com.makeramen:roundedimageview:${Versions.roundImages}"
+}
+
+object Glide {
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}:"
 }

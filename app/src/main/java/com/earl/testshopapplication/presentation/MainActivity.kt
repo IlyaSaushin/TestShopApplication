@@ -8,7 +8,6 @@ import com.earl.auth_presentation.prensentation.ui.signIn.SignInFragment
 import com.earl.profile_presentation.ui.ProfileFragment
 import com.earl.testshopapplication.R
 import com.earl.testshopapplication.presentation.screens.GoodDetailsFragment
-import com.earl.testshopapplication.presentation.screens.HomeFragment
 import com.earl.testshopapplication.presentation.screens.viewPager.MainPagerHostFragment
 import com.earl.utils.coreUi.NavigationContract
 
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity(), NavigationContract {
     }
 
     override fun home() {
-        showFragmentWithBackStack(HomeFragment.newInstance(), home)
+        showFragmentWithBackStack(com.earl.shop_presentation.ui.ShopFragment.newInstance(), home)
     }
 
     override fun goodDetails() {

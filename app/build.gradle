@@ -44,6 +44,9 @@ dependencies {
     implementation project (":profile:profile_data")
     implementation project (":profile:profile_domain")
     implementation project (":profile:profile_presentation")
+    implementation project (":shop:shop_data")
+    implementation project (":shop:shop_domain")
+    implementation project (":shop:shop_presentation")
     implementation project (":common:utils")
 
     implementation Dependencies.core
