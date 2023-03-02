@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.earl.auth_presentation.prensentation.ui.login.LogInFragment
 import com.earl.auth_presentation.prensentation.ui.signIn.SignInFragment
 import com.earl.profile_presentation.ui.ProfileFragment
+import com.earl.shop_presentation.ui.ShopHostFragment
 import com.earl.testshopapplication.R
 import com.earl.testshopapplication.presentation.screens.GoodDetailsFragment
 import com.earl.testshopapplication.presentation.screens.viewPager.MainPagerHostFragment
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationContract {
     }
 
     override fun home() {
-        showFragmentWithBackStack(com.earl.shop_presentation.ui.ShopFragment.newInstance(), home)
+        showFragmentWithBackStack(ShopHostFragment.newInstance(), home)
     }
 
     override fun goodDetails() {
@@ -61,5 +62,6 @@ class MainActivity : AppCompatActivity(), NavigationContract {
         private const val profile = "profile"
         private const val goodDetails = "goodDetails"
         private const val home = "home"
+        private const val productDetails = "productDetails"
     }
 }

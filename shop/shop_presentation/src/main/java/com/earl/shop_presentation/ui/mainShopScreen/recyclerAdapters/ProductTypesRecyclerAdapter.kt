@@ -1,4 +1,4 @@
-package com.earl.shop_presentation.ui.recyclerAdapters
+package com.earl.shop_presentation.ui.mainShopScreen.recyclerAdapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

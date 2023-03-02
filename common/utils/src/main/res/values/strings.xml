@@ -39,4 +39,7 @@
     <string name="not_tz_part">Не является частью тз :_(</string>
     <string name="user_is_already_registered">Пользователь с такими данными уже зарегистрирован</string>
     <string name="try_again">Попробовать снова</string>
+    <string name="quantity">Quantity: %s</string>
+    <string name="price">#%s</string>
+    <string name="add_to_cart">add to cart</string>
 </resources>

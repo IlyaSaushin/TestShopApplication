@@ -14,4 +14,8 @@
     <color name="tab_indicator_color">#EEEFF4</color>
     <color name="tab_selected_color">#737297</color>
     <color name="tab_icon_unselected_color">#909090</color>
+    <color name="card_btn_background">#181726</color>
+    <color name="text_color">#808080</color>
+    <color name="price_color">#99A0FF</color>
+    <color name="share_btn_color">#E5E9EF</color>
 </resources>

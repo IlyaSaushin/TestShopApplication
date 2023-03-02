@@ -1,4 +1,4 @@
-package com.earl.shop_presentation.ui.recyclerAdapters
+package com.earl.shop_presentation.ui.mainShopScreen.recyclerAdapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,13 @@ import com.earl.shop_presentation.ui.models.FlashSaleProductUi
 import com.earl.utils.coreUi.BaseRecyclerAdapter
 import com.earl.utils.coreUi.BaseRecyclerViewHolder
 
-class FlashSaleProductsRecyclerAdapter : BaseRecyclerAdapter<FlashSaleProductUi, BaseRecyclerViewHolder<FlashSaleProductUi>>(Diff) {
+interface OnFlashSaleProductClickListener {
+    fun onFlashSaleProductClick()
+}
+
+class FlashSaleProductsRecyclerAdapter(
+    private val clickListener: OnFlashSaleProductClickListener
+) : BaseRecyclerAdapter<FlashSaleProductUi, BaseRecyclerViewHolder<FlashSaleProductUi>>(Diff) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -22,6 +28,9 @@ class FlashSaleProductsRecyclerAdapter : BaseRecyclerAdapter<FlashSaleProductUi,
         : BaseRecyclerViewHolder<FlashSaleProductUi>(binding) {
         override fun bind(item: FlashSaleProductUi) {
             super.bind(item)
+            itemView.setOnClickListener {
+                clickListener.onFlashSaleProductClick()
+            }
             item.recyclerDetails(
                 binding.goodType,
                 binding.goodTitle,
