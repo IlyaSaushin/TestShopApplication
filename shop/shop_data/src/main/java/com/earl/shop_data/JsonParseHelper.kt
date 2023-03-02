@@ -1,9 +1,8 @@
 package com.earl.shop_data
 
-import android.util.Log
 import com.earl.shop_data.models.remote.FlashSaleProductRemote
 import com.earl.shop_data.models.remote.LatestProductRemote
-import org.json.JSONArray
+import com.earl.shop_data.models.remote.ProductDetailsRemote
 import org.json.JSONObject
 import javax.inject.Inject
 
@@ -13,10 +12,11 @@ interface JsonParseHelper {
 
     fun parseToLatestProduct(json: String) : List<LatestProductRemote>
 
+    fun parseToProductDetails(json: String) : ProductDetailsRemote
+
     class Base @Inject constructor() : JsonParseHelper {
 
         override fun parseToFlashSaleProduct(json: String): List<FlashSaleProductRemote> {
-            Log.d("tag", "parseToFlashSaleProduct: $json")
             val jsonObject = JSONObject(json)
             val productsArray = jsonObject.getJSONArray(flashSale)
             val readyList = mutableListOf<FlashSaleProductRemote>()
@@ -35,7 +35,6 @@ interface JsonParseHelper {
         }
 
         override fun parseToLatestProduct(json: String): List<LatestProductRemote> {
-            Log.d("tag", "parseToLatestProduct: $json")
             val jsonObject = JSONObject(json)
             val productsArray = jsonObject.getJSONArray(latest)
             val readyList = mutableListOf<LatestProductRemote>()
@@ -51,6 +50,29 @@ interface JsonParseHelper {
             }
             return readyList
         }
+
+        override fun parseToProductDetails(json: String): ProductDetailsRemote {
+            val jsonObject = JSONObject(json)
+            val readyColors = mutableListOf<String>()
+            val colors = jsonObject.getJSONArray(prodDetailsColors)
+            for (i in 0 until colors.length()) {
+                readyColors.add(colors.getString(i))
+            }
+            val readyImages = mutableListOf<String>()
+            val images = jsonObject.getJSONArray(prodDetailsImages)
+            for (i in 0 until colors.length()) {
+                readyImages.add(images.getString(i))
+            }
+            return ProductDetailsRemote(
+                jsonObject.getString(prodDetailsName),
+                jsonObject.getString(prodDetailsDesc),
+                jsonObject.getDouble(prodDetailsRate),
+                jsonObject.getInt(prodDetailsReviewsCount),
+                jsonObject.getInt(prodDetailsPrice),
+                readyColors,
+                readyImages,
+            )
+        }
     }
 
     companion object {
@@ -65,5 +87,13 @@ interface JsonParseHelper {
         private const val latestName = "name"
         private const val latestPrice = "price"
         private const val latestImageUrl = "image_url"
+        private const val prodDetailsName = "name"
+        private const val prodDetailsDesc = "description"
+        private const val prodDetailsRate = "rating"
+        private const val prodDetailsReviewsCount = "number_of_reviews"
+        private const val prodDetailsPrice = "price"
+        private const val prodDetailsColors = "colors"
+        private const val prodDetailsImages = "image_urls"
     }
 }
+

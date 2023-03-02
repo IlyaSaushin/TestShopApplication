@@ -2,16 +2,17 @@ package com.earl.shop_presentation.di
 
 import com.earl.shop_data.BaseRepository
 import com.earl.shop_data.JsonParseHelper
-import com.earl.shop_data.mappers.FlashSaleProductDataToDomainMapper
-import com.earl.shop_data.mappers.FlashSaleProductRemoteToDataMapper
-import com.earl.shop_data.mappers.LatestProductDataToDomainMapper
-import com.earl.shop_data.mappers.LatestProductRemoteToDataMapper
+import com.earl.shop_data.mappers.*
 import com.earl.shop_data.models.FlashSaleProductData
 import com.earl.shop_data.models.LatestProductData
+import com.earl.shop_data.models.ProductDetailsData
 import com.earl.shop_domain.Interactor
 import com.earl.shop_domain.Repository
 import com.earl.shop_domain.models.FlashSaleProductDomain
 import com.earl.shop_domain.models.LatestProductDomain
+import com.earl.shop_domain.models.ProductDetailsDomain
+import com.earl.shop_presentation.ui.ShopHostFragment
+import com.earl.shop_presentation.ui.ShopNavigationContract
 import com.earl.utils.remoteDataSource.NetworkService
 import dagger.Module
 import dagger.Provides
@@ -37,7 +38,9 @@ class ShopMainModule {
         flashSaleProductRemoteToDataMapper: FlashSaleProductRemoteToDataMapper<FlashSaleProductData>,
         flashSaleProductDataToDomainMapper: FlashSaleProductDataToDomainMapper<FlashSaleProductDomain>,
         latestProductRemoteToDataMapper: LatestProductRemoteToDataMapper<LatestProductData>,
-        latestProductDataToDomainMapper: LatestProductDataToDomainMapper<LatestProductDomain>
+        latestProductDataToDomainMapper: LatestProductDataToDomainMapper<LatestProductDomain>,
+        productDetailsRemoteToDataMapper: ProductDetailsRemoteToDataMapper<ProductDetailsData>,
+        productDetailsDataToDomainMapper: ProductDetailsDataToDomainMapper<ProductDetailsDomain>
     ) : Repository {
         return BaseRepository(
             networkService,
@@ -45,7 +48,9 @@ class ShopMainModule {
             flashSaleProductRemoteToDataMapper,
             flashSaleProductDataToDomainMapper,
             latestProductRemoteToDataMapper,
-            latestProductDataToDomainMapper
+            latestProductDataToDomainMapper,
+            productDetailsRemoteToDataMapper,
+            productDetailsDataToDomainMapper
         )
     }
 
@@ -53,5 +58,11 @@ class ShopMainModule {
     @Provides
     fun provideJsonParseHelper() : JsonParseHelper {
         return JsonParseHelper.Base()
+    }
+
+    @ShopScope
+    @Provides
+    fun provideShopNavigator() : ShopNavigationContract {
+        return ShopHostFragment()
     }
 }

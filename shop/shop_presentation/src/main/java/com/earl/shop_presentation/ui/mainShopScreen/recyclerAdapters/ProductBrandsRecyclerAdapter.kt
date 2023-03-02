@@ -1,4 +1,4 @@
-package com.earl.shop_presentation.ui.recyclerAdapters
+package com.earl.shop_presentation.ui.mainShopScreen.recyclerAdapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,9 @@ import com.earl.shop_presentation.ui.models.ProductBrand
 import com.earl.utils.coreUi.BaseRecyclerAdapter
 import com.earl.utils.coreUi.BaseRecyclerViewHolder
 
-class ProductBrandsRecyclerAdapter : BaseRecyclerAdapter<ProductBrand, BaseRecyclerViewHolder<ProductBrand>>(Diff) {
+class ProductBrandsRecyclerAdapter : BaseRecyclerAdapter<ProductBrand, BaseRecyclerViewHolder<ProductBrand>>(
+    Diff
+) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

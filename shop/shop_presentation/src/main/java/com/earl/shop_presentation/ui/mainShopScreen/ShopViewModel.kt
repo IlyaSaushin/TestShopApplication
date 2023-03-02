@@ -1,4 +1,4 @@
-package com.earl.shop_presentation.ui
+package com.earl.shop_presentation.ui.mainShopScreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
