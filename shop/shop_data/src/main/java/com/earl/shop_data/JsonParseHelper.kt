@@ -14,6 +14,8 @@ interface JsonParseHelper {
 
     fun parseToProductDetails(json: String) : ProductDetailsRemote
 
+    fun parseToBrandsList(json: String) : List<String>
+
     class Base @Inject constructor() : JsonParseHelper {
 
         override fun parseToFlashSaleProduct(json: String): List<FlashSaleProductRemote> {
@@ -73,6 +75,15 @@ interface JsonParseHelper {
                 readyImages,
             )
         }
+
+        override fun parseToBrandsList(json: String): List<String> {
+            val jsonArray = JSONObject(json).getJSONArray(brands)
+            val readyList = mutableListOf<String>()
+            for (i in 0 until jsonArray.length()) {
+                readyList.add(jsonArray.getString(i))
+            }
+            return readyList
+        }
     }
 
     companion object {
@@ -94,6 +105,7 @@ interface JsonParseHelper {
         private const val prodDetailsPrice = "price"
         private const val prodDetailsColors = "colors"
         private const val prodDetailsImages = "image_urls"
+        private const val brands = "words"
     }
 }
 

@@ -13,6 +13,8 @@ interface Interactor {
 
     suspend fun fetchProductDetails() : ProductDetailsDomain
 
+    suspend fun fetchBrandsList() : List<String>
+
     class Base @Inject constructor(
         private val repository: Repository
     ) : Interactor {
@@ -25,5 +27,8 @@ interface Interactor {
 
         override suspend fun fetchProductDetails() =
             repository.fetchProductDetails()
+
+        override suspend fun fetchBrandsList() =
+            repository.fetchBrandsList()
     }
 }

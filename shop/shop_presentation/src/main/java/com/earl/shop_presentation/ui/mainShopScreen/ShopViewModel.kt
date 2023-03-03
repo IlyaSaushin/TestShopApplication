@@ -13,6 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class ShopViewModel @Inject constructor(
@@ -63,4 +64,13 @@ class ShopViewModel @Inject constructor(
 
     private suspend fun fetchLatestProductsList() = interactor.fetchLatestProducts()
         .map { it.mapToUi(latestProductDomainToUiMapper) }
+
+    fun fetchProductsBrands(callback: (List<String>) -> Unit) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val prodlist = interactor.fetchBrandsList()
+            withContext(Dispatchers.Main) {
+                callback.invoke(prodlist)
+            }
+        }
+    }
 }
