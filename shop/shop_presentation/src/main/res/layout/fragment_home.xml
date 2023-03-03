@@ -57,7 +57,7 @@
         android:drawableEnd="@drawable/arr_down"
         />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/search_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

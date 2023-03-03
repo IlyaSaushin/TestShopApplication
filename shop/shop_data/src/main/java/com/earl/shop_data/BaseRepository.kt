@@ -53,4 +53,9 @@ class BaseRepository @Inject constructor(
         jsonParseHelper.parseToProductDetails(networkService.fetchProductDetails().string())
             .mapToData(productDetailsRemoteToDataMapper)
             .mapToDomain(productDetailsDataToDomainMapper)
+
+    override suspend fun fetchBrandsList() =
+        jsonParseHelper.parseToBrandsList(
+            networkService.fetchProductsBrands().string()
+        )
 }

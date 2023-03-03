@@ -11,4 +11,6 @@ interface Repository {
     suspend fun fetchLatestProducts() : List<LatestProductDomain>
 
     suspend fun fetchProductDetails() : ProductDetailsDomain
+
+    suspend fun fetchBrandsList() : List<String>
 }
