@@ -1,15 +1,13 @@
 package com.earl.testshopapplication.presentation.screens.navHosts
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.earl.shop_presentation.R
-import com.earl.shop_presentation.databinding.FragmentShopHostBinding
-import com.earl.shop_presentation.ui.screens.mainShopScreen.ShopHomeFragment
-import com.earl.shop_presentation.ui.screens.productDetailsScreen.ProductDetailsFragment
+import com.earl.shop_feature.databinding.FragmentShopHostBinding
+import com.earl.shop_feature.presentation.screens.mainShopScreen.ShopHomeFragment
+import com.earl.shop_feature.presentation.screens.productDetailsScreen.ProductDetailsFragment
 import com.earl.utils.coreUi.ShopBaseFragment
 import com.earl.utils.navigation.NavigationContract
 
@@ -56,11 +54,12 @@ class ShopNavHostFragment : ShopBaseFragment<FragmentShopHostBinding>(),
 
     override fun back() {
         childFragmentManager.popBackStack(shopScreen, 0)
+        lastScreen = shopScreen
     }
 
     private fun showFragment(fragment: Fragment, fragmentTag: String) {
         childFragmentManager.beginTransaction()
-            .replace(R.id.shop_host_container, fragment, fragmentTag)
+            .replace(com.earl.shop_feature.R.id.shop_host_container, fragment, fragmentTag)
             .addToBackStack(fragmentTag)
             .commit()
     }

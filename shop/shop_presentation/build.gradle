@@ -66,6 +66,3 @@ dependencies {
     implementation Glide.glide
     annotationProcessor Glide.glideCompiler
 }
-androidExtensions {
-    experimental = true
-}

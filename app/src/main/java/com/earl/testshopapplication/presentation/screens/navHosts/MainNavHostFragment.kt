@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.earl.profile_presentation.ui.ProfileFragment
-import com.earl.shop_presentation.ui.screens.productDetailsScreen.ProductDetailsFragment
+import com.earl.profile_feature.presentation.ProfileFragment
 import com.earl.testshopapplication.R
 import com.earl.testshopapplication.databinding.FragmentMainHostBinding
 import com.earl.testshopapplication.presentation.screens.BasketFragmentMain
@@ -34,7 +33,7 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
     override fun profile() {
         parentFragmentManager.findFragmentByTag(profileFrag).apply {
             if (this == null) {
-                showFragmentWithBackStack(ProfileFragment.newInstance(), profile, profileFrag)
+                showFragmentWithBackStack(com.earl.profile_feature.presentation.ProfileFragment.newInstance(), profile, profileFrag)
             } else {
                 showFragmentWithBackStack(this, profile, profileFrag)
             }

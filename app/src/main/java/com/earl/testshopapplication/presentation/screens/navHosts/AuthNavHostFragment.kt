@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.earl.auth_presentation.prensentation.ui.login.LogInFragment
-import com.earl.auth_presentation.prensentation.ui.signIn.SignInFragment
+import com.earl.authorization_feature.presentation.ui.login.LogInFragment
+import com.earl.authorization_feature.presentation.ui.signIn.SignInFragment
 import com.earl.testshopapplication.R
 import com.earl.testshopapplication.databinding.FragmentHostAuthBinding
 import com.earl.utils.coreUi.AuthBaseFragment
@@ -70,10 +70,7 @@ class AuthNavHostFragment : AuthBaseFragment<FragmentHostAuthBinding>(),
 
         private const val logIn = "logIn"
         private const val logInFrag = "logInFrag"
-        private const val signIn = "signIn"
         private const val signInFrag = "signInFrag"
-        private const val shopNavHost = "shopNavHost"
-        private const val shopNavHostFrag = "shopNavHostFrag"
         private const val mainHostFrag = "mainHostFrag"
     }
 }
