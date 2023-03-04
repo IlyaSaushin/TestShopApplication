@@ -11,8 +11,6 @@ import com.earl.shop_domain.Repository
 import com.earl.shop_domain.models.FlashSaleProductDomain
 import com.earl.shop_domain.models.LatestProductDomain
 import com.earl.shop_domain.models.ProductDetailsDomain
-import com.earl.shop_presentation.ui.ShopHostFragment
-import com.earl.shop_presentation.ui.ShopNavigationContract
 import com.earl.utils.remoteDataSource.NetworkService
 import dagger.Module
 import dagger.Provides
@@ -58,11 +56,5 @@ class ShopMainModule {
     @Provides
     fun provideJsonParseHelper() : JsonParseHelper {
         return JsonParseHelper.Base()
-    }
-
-    @ShopScope
-    @Provides
-    fun provideShopNavigator() : ShopNavigationContract {
-        return ShopHostFragment()
     }
 }

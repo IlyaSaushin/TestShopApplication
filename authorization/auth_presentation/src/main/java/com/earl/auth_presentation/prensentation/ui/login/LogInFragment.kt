@@ -12,13 +12,13 @@ import com.earl.auth_presentation.R
 import com.earl.auth_presentation.databinding.FragmentLoginBinding
 import com.earl.auth_presentation.di.AuthComponentProvider
 import com.earl.auth_presentation.prensentation.models.UserLoginValuesUi
-import com.earl.utils.coreUi.BaseFragment
+import com.earl.utils.coreUi.AuthBaseFragment
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class LogInFragment : BaseFragment<FragmentLoginBinding>() {
+class LogInFragment : AuthBaseFragment<FragmentLoginBinding>() {
 
     @Inject lateinit var viewModel: LoginViewModel
 
@@ -60,7 +60,8 @@ class LogInFragment : BaseFragment<FragmentLoginBinding>() {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.successLoginOperation.onEach { success ->
                     if (success) {
-                        navigator.mainPagerHost()
+                        navigator.mainHostFragment()
+                        viewModel.clearAuthorizationOperationResult()
                     }
                 }.collect()
             }

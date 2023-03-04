@@ -5,6 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:id="@+id/fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/favorite"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:fontFamily="@font/montesserat_medium"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="100dp"
+        />
+
+    <TextView
         android:id="@+id/not_tz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

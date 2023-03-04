@@ -50,4 +50,8 @@ class SignInViewModel @Inject constructor(
             }
         }
     }
+
+    fun clearAuthorizationOperationResult() {
+        _registrationSuccessResultFlow.value = false
+    }
 }
