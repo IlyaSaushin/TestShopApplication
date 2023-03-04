@@ -14,12 +14,12 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import com.earl.profile_presentation.databinding.FragmentProfileBinding
 import com.earl.profile_presentation.di.ProfileComponentProvider
-import com.earl.utils.coreUi.BaseFragment
+import com.earl.utils.coreUi.MainBaseFragment
 import java.io.ByteArrayOutputStream
 import java.io.FileNotFoundException
 import javax.inject.Inject
 
-class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
+class ProfileFragment : MainBaseFragment<FragmentProfileBinding>() {
 
     @Inject lateinit var viewModel: ProfileViewModel
     var encodedImage: String? = null
@@ -42,7 +42,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     private fun logOut() {
         viewModel.removeUserFromLocalDb()
-        navigator.signInFragment()
+        navigator.signIn()
     }
 
     private fun changeUserImage() {

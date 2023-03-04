@@ -12,13 +12,13 @@ import com.earl.auth_presentation.R
 import com.earl.auth_presentation.databinding.FragmentSignInBinding
 import com.earl.auth_presentation.di.AuthComponentProvider
 import com.earl.auth_presentation.prensentation.models.UserRegisterValuesUi
-import com.earl.utils.coreUi.BaseFragment
+import com.earl.utils.coreUi.AuthBaseFragment
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SignInFragment : BaseFragment<FragmentSignInBinding>() {
+class SignInFragment : AuthBaseFragment<FragmentSignInBinding>() {
 
     @Inject lateinit var viewModel: SignInViewModel
 
@@ -78,7 +78,10 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.registrationSuccessResultFlow.onEach { successfulResult ->
-                    if (successfulResult) navigator.mainPagerHost()
+                    if (successfulResult) {
+                        navigator.mainHostFragment()
+                        viewModel.clearAuthorizationOperationResult()
+                    }
                 }.collect()
             }
         }

@@ -1,7 +1,7 @@
 package com.earl.shop_presentation.di
 
-import com.earl.shop_presentation.ui.productDetails.ProductDetailsFragment
-import com.earl.shop_presentation.ui.mainShopScreen.ShopFragment
+import com.earl.shop_presentation.ui.screens.productDetailsScreen.ProductDetailsFragment
+import com.earl.shop_presentation.ui.screens.mainShopScreen.ShopHomeFragment
 import dagger.Subcomponent
 
 @ShopScope
@@ -18,7 +18,7 @@ interface ShopComponent {
         fun create() : ShopComponent
     }
 
-    fun inject(fragment: ShopFragment)
+    fun inject(fragment: ShopHomeFragment)
 
     fun inject(fragment: ProductDetailsFragment)
 }

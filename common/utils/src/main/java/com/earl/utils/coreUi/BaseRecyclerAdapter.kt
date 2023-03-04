@@ -12,13 +12,6 @@ abstract class BaseRecyclerAdapter<T, V : BaseRecyclerViewHolder<T>>(diff: DiffU
     override fun onBindViewHolder(holder: V, position: Int) =
         holder.bind(getItem(position))
 
-//    private val selectedPos = RecyclerView.NO_POSITION
-//
-//    override fun onBindViewHolder(holder: V, position: Int) {
-//        holder.bind(getItem(position))
-//        holder.itemView.isSelected = selectedPos == position;
-//    }
-
     protected fun Int.createView(parent: ViewGroup): View =
         LayoutInflater.from(parent.context).inflate(this, parent, false)
 }

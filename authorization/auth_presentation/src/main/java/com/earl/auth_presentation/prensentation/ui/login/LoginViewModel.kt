@@ -39,4 +39,8 @@ class LoginViewModel @Inject constructor(
             }
         }
     }
+
+    fun clearAuthorizationOperationResult() {
+        _successLoginOperation.value = false
+    }
 }

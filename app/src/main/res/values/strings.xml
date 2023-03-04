@@ -37,4 +37,7 @@
     <string name="flash_sale"><b>Flash Sale</b></string>
     <string name="brands"><b>Brands</b></string>
     <string name="not_tz_part">Не является частью тз :_(</string>
+    <string name="favorite">Фрагмент - favorite</string>
+    <string name="basket">Фрагмент - basket</string>
+    <string name="chat">Фрагмент - chat</string>
 </resources>
