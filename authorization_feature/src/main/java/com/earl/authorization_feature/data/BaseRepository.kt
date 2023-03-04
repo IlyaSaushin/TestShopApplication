@@ -3,9 +3,9 @@ package com.earl.authorization_feature.data
 import com.earl.authorization_feature.data.mappers.UserRegisterValuesDataToDbMapper
 import com.earl.authorization_feature.data.models.UserLoginValuesData
 import com.earl.authorization_feature.data.models.UserRegisterValuesData
-import com.earl.authorization_feature.domain.LoginOperationResult
-import com.earl.authorization_feature.domain.RegistrationOperationExceptions
-import com.earl.authorization_feature.domain.RegistrationOperationResult
+import com.earl.authorization_feature.domain.operationResultListeners.LoginOperationResult
+import com.earl.authorization_feature.domain.operationResultListeners.RegistrationOperationExceptions
+import com.earl.authorization_feature.domain.operationResultListeners.RegistrationOperationResult
 import com.earl.authorization_feature.domain.Repository
 import com.earl.authorization_feature.domain.mappers.UserLoginValuesDomainToDataMapper
 import com.earl.authorization_feature.domain.mappers.UserRegisterValuesDomainToDataMapper

@@ -14,8 +14,7 @@ class ProfileViewModel @Inject constructor(
 
     fun removeUserFromLocalDb() {
         viewModelScope.launch(Dispatchers.IO) {
-            val operationResult = interactor.removeUserDataFromLocalDb()
-            when(operationResult) {
+            when(interactor.removeUserDataFromLocalDb()) {
                 is LogOutOperationResultListener.Success -> {}
                 is LogOutOperationResultListener.Fail -> {}
             }

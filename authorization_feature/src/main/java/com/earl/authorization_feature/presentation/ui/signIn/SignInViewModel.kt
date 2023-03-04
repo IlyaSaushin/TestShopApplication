@@ -3,8 +3,8 @@ package com.earl.authorization_feature.presentation.ui.signIn
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.earl.authorization_feature.domain.Interactor
-import com.earl.authorization_feature.domain.RegistrationOperationExceptions
-import com.earl.authorization_feature.domain.RegistrationOperationResult
+import com.earl.authorization_feature.domain.operationResultListeners.RegistrationOperationExceptions
+import com.earl.authorization_feature.domain.operationResultListeners.RegistrationOperationResult
 import com.earl.authorization_feature.domain.models.UserRegisterValuesDomain
 import com.earl.authorization_feature.presentation.mappers.UserRegisterValuesUiToDomainMapper
 import com.earl.authorization_feature.presentation.models.UserRegisterValuesUi

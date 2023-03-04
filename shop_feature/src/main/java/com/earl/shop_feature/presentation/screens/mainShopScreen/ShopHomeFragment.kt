@@ -73,6 +73,7 @@ class ShopHomeFragment : ShopBaseFragment<FragmentHomeBinding>(), OnFlashSalePro
         initProductTypesRecyclerAdapter()
         initFlashSaleRecyclerAdapter()
         initLatestProductRecyclerAdapter()
+        initBrandsRecyclerAdapter()
     }
 
     private fun initFlashSaleRecyclerAdapter() {

@@ -3,7 +3,7 @@ package com.earl.authorization_feature.presentation.ui.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.earl.authorization_feature.domain.Interactor
-import com.earl.authorization_feature.domain.LoginOperationResult
+import com.earl.authorization_feature.domain.operationResultListeners.LoginOperationResult
 import com.earl.authorization_feature.domain.models.UserLoginValuesDomain
 import com.earl.authorization_feature.presentation.mappers.UserLoginValuesUiToDomainMapper
 import com.earl.authorization_feature.presentation.models.UserLoginValuesUi

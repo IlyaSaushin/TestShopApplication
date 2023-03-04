@@ -33,7 +33,7 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
     override fun profile() {
         parentFragmentManager.findFragmentByTag(profileFrag).apply {
             if (this == null) {
-                showFragmentWithBackStack(com.earl.profile_feature.presentation.ProfileFragment.newInstance(), profile, profileFrag)
+                showFragmentWithBackStack(ProfileFragment.newInstance(), profile, profileFrag)
             } else {
                 showFragmentWithBackStack(this, profile, profileFrag)
             }
@@ -125,10 +125,7 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
         fun newInstance() = MainNavHostFragment()
         private const val profile = "profile"
         private const val profileFrag = "profileFrag"
-        private const val goodDetails = "goodDetails"
-        private const val goodDetailsFrag = "goodDetailsFrag"
         private const val home = "home"
-        private const val homeFrag = "homeFrag"
         private const val favorite = "favorite"
         private const val favoriteFrag = "favoriteFrag"
         private const val cart = "cart"
