@@ -1,6 +1,7 @@
 package com.earl.testshopapplication.presentation.screens.navHosts
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,13 +27,7 @@ class AuthNavHostFragment : AuthBaseFragment<FragmentHostAuthBinding>(),
     }
 
     override fun signInFragment() {
-        parentFragmentManager.findFragmentByTag(signInFrag).apply {
-            if (this == null) {
-                showFragmentWithoutBackStack(SignInFragment.newInstance(), signInFrag)
-            } else {
-                showFragmentWithoutBackStack(this, signInFrag)
-            }
-        }
+        showFragmentWithoutBackStack(SignInFragment.newInstance(), signInFrag)
     }
 
     override fun loginFragment() {
