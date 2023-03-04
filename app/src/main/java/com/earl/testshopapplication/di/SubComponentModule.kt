@@ -1,6 +1,6 @@
 package com.earl.testshopapplication.di
 
-import com.earl.auth_presentation.di.AuthComponent
+import com.earl.authorization_feature.di.AuthComponent
 import dagger.Module
 
 @Module(subcomponents = [AuthComponent::class])

@@ -18,4 +18,5 @@
     <color name="text_color">#808080</color>
     <color name="price_color">#99A0FF</color>
     <color name="share_btn_color">#E5E9EF</color>
+    <color name="clor_text">#737373</color>
 </resources>

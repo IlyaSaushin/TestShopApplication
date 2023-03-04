@@ -1,0 +1,7 @@
+<resources>
+    <string name="registration_error_try_again">Возникла ошибка, попробуйте снова</string>
+    <string name="empty_string_err">Это поле не может быть пустым</string>
+    <string name="shor_pass_err">Некорректный email</string>
+    <string name="last_name">Last name</string>
+    <string name="try_again">Попробовать снова</string>
+</resources>

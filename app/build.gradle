@@ -38,16 +38,10 @@ android {
 
 dependencies {
 
-    implementation project (":authorization:auth_presentation")
-    implementation project (":authorization:auth_domain")
-    implementation project (":authorization:auth_data")
-    implementation project (":profile:profile_data")
-    implementation project (":profile:profile_domain")
-    implementation project (":profile:profile_presentation")
-    implementation project (":shop:shop_data")
-    implementation project (":shop:shop_domain")
-    implementation project (":shop:shop_presentation")
     implementation project (":common:utils")
+    implementation project (":profile_feature")
+    implementation project (":authorization_feature")
+    implementation project (":shop_feature")
 
     implementation Dependencies.core
     implementation Dependencies.appCompat

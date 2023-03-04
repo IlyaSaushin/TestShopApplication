@@ -15,14 +15,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TestShopApplication"
 include ':app'
-include ':authorization:auth_data'
-include ':authorization:auth_domain'
-include ':authorization:auth_presentation'
 include ':common:utils'
 include ':common:utils'
-include ':profile:profile_data'
-include ':profile:profile_domain'
-include ':profile:profile_presentation'
-include ':shop:shop_data'
-include ':shop:shop_domain'
-include ':shop:shop_presentation'
+include ':profile_feature'
+include ':authorization_feature'
+include ':shop_feature'
