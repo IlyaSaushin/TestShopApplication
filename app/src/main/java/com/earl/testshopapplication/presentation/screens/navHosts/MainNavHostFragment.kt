@@ -42,7 +42,7 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
     }
 
     override fun home() {
-        requireActivity().supportFragmentManager.findFragmentByTag(homeFrag).apply {
+        parentFragmentManager.findFragmentByTag(shopNavHostFrag).apply {
             if (this == null) {
                 showFragmentWithBackStack(ShopNavHostFragment.newInstance(), home, shopNavHostFrag)
                 Log.d("tag", "shop home not existed: $this")
