@@ -16,6 +16,8 @@ import com.earl.utils.navigation.NavigationContract
 class ShopNavHostFragment : ShopBaseFragment<FragmentShopHostBinding>(),
     NavigationContract.ShopNavigationContract {
 
+    private var lastScreen: String = shopScreen
+
     override fun viewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -23,18 +25,20 @@ class ShopNavHostFragment : ShopBaseFragment<FragmentShopHostBinding>(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        shopScreen()
+        when(lastScreen) {
+            shopScreen -> shopScreen()
+            productDetailsScreen -> productDetailsScreen()
+        }
     }
 
     override fun shopScreen() {
         childFragmentManager.findFragmentByTag(shopScreen).apply {
             if (this == null) {
-                Log.d("tag", "shopScreen: not existed -> $this")
                 showFragment(ShopHomeFragment.newInstance(), shopScreen)
             } else {
-                Log.d("tag", "shopScreen: existed -> $this")
                 showFragment(this, shopScreen)
             }
+            lastScreen = shopScreen
         }
     }
 
@@ -42,23 +46,22 @@ class ShopNavHostFragment : ShopBaseFragment<FragmentShopHostBinding>(),
         childFragmentManager.findFragmentByTag(productDetailsScreen).apply {
             if (this == null) {
                 showFragment(ProductDetailsFragment.newInstance(), productDetailsScreen)
-                Log.d("tag", "productDetails: not existed -> $this")
 
             } else {
                 showFragment(this, productDetailsScreen)
-                Log.d("tag", "productDetails: existed -> $this")
             }
+            lastScreen = productDetailsScreen
         }
     }
 
     override fun back() {
-        childFragmentManager.popBackStack()
+        childFragmentManager.popBackStack(shopScreen, 0)
     }
 
     private fun showFragment(fragment: Fragment, fragmentTag: String) {
         childFragmentManager.beginTransaction()
             .replace(R.id.shop_host_container, fragment, fragmentTag)
-            .addToBackStack(null)
+            .addToBackStack(fragmentTag)
             .commit()
     }
 

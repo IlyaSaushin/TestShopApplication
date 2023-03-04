@@ -48,7 +48,6 @@ class ProductDetailsFragment : ShopBaseFragment<FragmentProductDetailsBinding>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.fetchProductDetails()
         initViews()
         initImageRecyclerAdapter()
         initColorsRecyclerAdapter()
@@ -57,6 +56,9 @@ class ProductDetailsFragment : ShopBaseFragment<FragmentProductDetailsBinding>()
     }
 
     private fun initViews() {
+        if (viewModel.prodDetails.value == null) {
+            viewModel.fetchProductDetails()
+        }
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.prodDetails.onEach { details ->
