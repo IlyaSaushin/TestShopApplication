@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.earl.authorization_feature.presentation.ui.signIn.SignInFragment
 import com.earl.profile_feature.presentation.ProfileFragment
 import com.earl.testshopapplication.R
 import com.earl.testshopapplication.databinding.FragmentMainHostBinding
@@ -44,10 +45,8 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
         parentFragmentManager.findFragmentByTag(shopNavHostFrag).apply {
             if (this == null) {
                 showFragmentWithBackStack(ShopNavHostFragment.newInstance(), home, shopNavHostFrag)
-                Log.d("tag", "shop home not existed: $this")
             } else {
                 showFragmentWithBackStack(this, home, shopNavHostFrag)
-                Log.d("tag", "shop home fragment existed")
             }
         }
     }
@@ -83,9 +82,13 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
     }
 
     override fun signIn() {
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.container, AuthNavHostFragment.newInstance(), navHostAuth)
-            .commit()
+        requireActivity().supportFragmentManager.findFragmentByTag(navHostAuth).apply {
+            if (this == null) {
+                showFragmentWithoutBackStack(AuthNavHostFragment.newInstance(), navHostAuth)
+            } else {
+                showFragmentWithoutBackStack(this, navHostAuth)
+            }
+        }
     }
 
     private fun initTabs() {
@@ -120,6 +123,12 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
             .commit()
     }
 
+    private fun showFragmentWithoutBackStack(fragment: Fragment, fragmentTag: String) {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.container, fragment, fragmentTag)
+            .commit()
+    }
+
     companion object {
 
         fun newInstance() = MainNavHostFragment()
@@ -132,7 +141,7 @@ class MainNavHostFragment : MainBaseFragment<FragmentMainHostBinding>(),
         private const val cartFrag = "cartFrag"
         private const val chat = "chat"
         private const val chatFrag = "chatFrag"
-        private const val navHostAuth = "navHostAuth"
         private const val shopNavHostFrag = "shopNavHostFrag"
+        private const val navHostAuth = "navHostAuth"
     }
 }
