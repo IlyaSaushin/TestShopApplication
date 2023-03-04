@@ -1,6 +1,5 @@
 package com.earl.shop_feature.data
 
-import android.util.Log
 import com.earl.shop_feature.data.mappers.*
 import com.earl.shop_feature.data.models.FlashSaleProductData
 import com.earl.shop_feature.data.models.LatestProductData
@@ -31,7 +30,6 @@ class BaseRepository @Inject constructor(
             .map { it.mapToData(flashSaleProductRemoteToDataMapper) }
             .map { it.mapToDomain(flashSaleProductDataToDomainMapper) }
     } catch (e: Exception) {
-        Log.d("tag", "fetchFlashSaleProducts: $e")
         e.printStackTrace()
         emptyList()
     }
@@ -44,7 +42,6 @@ class BaseRepository @Inject constructor(
             .map { it.mapToData(latestProductRemoteToDataMapper) }
             .map { it.mapToDomain(latestProductDataToDomainMapper) }
     } catch (e: Exception) {
-        Log.d("tag", "fetchLatestProducts: $e")
         e.printStackTrace()
         emptyList()
     }

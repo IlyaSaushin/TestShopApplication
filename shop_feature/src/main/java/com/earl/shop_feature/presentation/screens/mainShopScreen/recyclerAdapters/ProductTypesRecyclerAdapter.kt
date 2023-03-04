@@ -8,9 +8,7 @@ import com.earl.shop_feature.presentation.models.GoodType
 import com.earl.utils.coreUi.BaseRecyclerAdapter
 import com.earl.utils.coreUi.BaseRecyclerViewHolder
 
-class ProductTypesRecyclerAdapter : BaseRecyclerAdapter<GoodType, BaseRecyclerViewHolder<GoodType>>(
-    Diff
-) {
+class ProductTypesRecyclerAdapter : BaseRecyclerAdapter<GoodType, BaseRecyclerViewHolder<GoodType>>(Diff) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

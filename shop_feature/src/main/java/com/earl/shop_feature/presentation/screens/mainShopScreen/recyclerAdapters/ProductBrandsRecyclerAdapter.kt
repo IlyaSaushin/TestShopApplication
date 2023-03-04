@@ -3,30 +3,27 @@ package com.earl.shop_feature.presentation.screens.mainShopScreen.recyclerAdapte
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.earl.shop_feature.databinding.RecyclerBrandItemBinding
+import com.earl.shop_feature.databinding.RecyclerBrandBinding
 import com.earl.shop_feature.presentation.models.ProductBrand
 import com.earl.utils.coreUi.BaseRecyclerAdapter
 import com.earl.utils.coreUi.BaseRecyclerViewHolder
 
-class ProductBrandsRecyclerAdapter : BaseRecyclerAdapter<ProductBrand, BaseRecyclerViewHolder<ProductBrand>>(
-    Diff
-) {
+class ProductBrandsRecyclerAdapter :
+    BaseRecyclerAdapter<ProductBrand, BaseRecyclerViewHolder<ProductBrand>>(Diff) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): BaseRecyclerViewHolder<ProductBrand> {
-        val binding = RecyclerBrandItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = RecyclerBrandBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemViewHolder(binding)
     }
 
-    inner class ItemViewHolder(private val binding: RecyclerBrandItemBinding) :
+    inner class ItemViewHolder(private val binding: RecyclerBrandBinding) :
         BaseRecyclerViewHolder<ProductBrand>(binding) {
         override fun bind(item: ProductBrand) {
             super.bind(item)
-            binding.brandType.text = item.brandType
-            binding.brandTitle.text = item.brandName
-            binding.brandImage.setImageResource(item.logo)
+            binding.image.setImageResource(item.logo)
         }
     }
 

@@ -143,62 +143,17 @@ class ProductDetailsFragment : ShopBaseFragment<FragmentProductDetailsBinding>()
         val layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
         binding.recyclerImagesPreview.layoutManager = layoutManager
         previewImageRecyclerAdapter = ProdImagePreviewRecyclerAdapter { selectedPosition ->
-//            binding.recyclerImagesPreview.layoutManager?.smoothScrollToPosition(
-//                binding.recyclerImagesPreview,
-//                null,
-//                selectedPosition
-//            )
             changeImageFromPreview = true
             binding.recyclerImages.layoutManager?.smoothScrollToPosition(
                 binding.recyclerImages,
                 null,
                 selectedPosition
             )
-//            selectMiddleItem(layoutManager, binding.recyclerImagesPreview)
-
-//            binding.recyclerImagesPreview[selectedPosition].elevation = 30f
-//            Log.d("tag", "initImagePreviewRecyclerAdapter: $selectedPosition")
             changeImageFromPreview = false
         }
-
         val snapHelper = CenterSnapHelper()
-//        binding.recyclerImagesPreview.addItemDecoration(CenterDecoration(1))
         binding.recyclerImagesPreview.adapter = previewImageRecyclerAdapter
-
         snapHelper.attachToRecyclerView(binding.recyclerImagesPreview)
-
-//        binding.recyclerImagesPreview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-//                recyclerView.post {
-////                    selectMiddleItem(layoutManager, recyclerView)
-//
-////                    val firstVisibleIndex = layoutManager.findFirstVisibleItemPosition()
-////                    val lastVisibleIndex = layoutManager.findLastVisibleItemPosition()
-////                    val visibleIndexes = listOf(firstVisibleIndex..lastVisibleIndex).flatten()
-////
-////                    for (i in visibleIndexes) {
-////                        val vh = binding.recyclerImagesPreview.findViewHolderForLayoutPosition(i)
-////                        if (vh?.itemView == null) {
-////                            continue
-////                        }
-////                        val location = IntArray(2)
-////                        vh.itemView.getLocationOnScreen(location)
-////                        val x = location[0]
-////                        val halfWidth = vh.itemView.width * .5
-////                        val rightSide = x + halfWidth
-////                        val leftSide = x - halfWidth
-////                        val widthDp = resources.displayMetrics.run { widthPixels / density }
-////                        val isInMiddle = widthDp * .5 in leftSide..rightSide
-////                        if (isInMiddle) {
-////                            // "i" is your middle index and implement selecting it as you want
-//////                             optionsAdapter.selectItemAtIndex(i)
-////                            binding.recyclerImagesPreview[i].elevation = 40f
-////                            return@post
-////                        }
-////                    }
-//                }
-//            }
-//        })
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.prodDetailsImages.onEach { details ->
@@ -209,68 +164,6 @@ class ProductDetailsFragment : ShopBaseFragment<FragmentProductDetailsBinding>()
             }
         }
     }
-
-//    private fun selectMiddleItem(manager: LinearLayoutManager, recyclerView: RecyclerView) {
-//
-//        val firstVisibleIndex = manager.findFirstVisibleItemPosition()
-//        val lastVisibleIndex = manager.findLastVisibleItemPosition()
-//        val visibleIndexes = listOf(firstVisibleIndex..lastVisibleIndex).flatten()
-//
-//        for (k in visibleIndexes) {
-//            val vh = recyclerView.findViewHolderForLayoutPosition(k)
-//            if (vh?.itemView == null) {
-//                continue
-//            }
-//            val location = IntArray(2)
-//            vh.itemView.getLocationOnScreen(location)
-//            val x = location[0]
-//            val halfWidth = vh.itemView.width * .5
-//            val rightSide = x + halfWidth
-//            val leftSide = x - halfWidth
-//            val isInMiddle = manager.width * .5 in leftSide..rightSide
-//            if (isInMiddle) {
-//
-//                val mid = manager.width * 5
-//                val d1 = 0.9f * mid
-//                for (i in 0 until manager.childCount) {
-//                    val child = manager.getChildAt(i)
-////                    val childMid = (manager.getDecoratedRight(child!!) + manager.getDecoratedLeft(child)) / 0.2f
-//                    val childMid = (manager.getDecoratedRight(child!!) + manager.getDecoratedLeft(child)) / 1.2f
-//                    val d = Math.min(d1, Math.abs(mid - childMid))
-//                    val scale = 1f - 0.15f * d / d1
-//                    child.scaleX = scale
-//                    child.scaleY = scale
-//                    child.elevation = 40f
-//                }
-//                return
-//            }
-//        }
-//    }
-
-    //    private fun selectMiddleItem(layoutManager: LinearLayoutManager) {
-//        val firstVisibleIndex = layoutManager.findFirstVisibleItemPosition()
-//        val lastVisibleIndex = layoutManager.findLastVisibleItemPosition()
-//        val visibleIndexes = listOf(firstVisibleIndex..lastVisibleIndex).flatten()
-//
-//        for (i in visibleIndexes) {
-//            val vh = findViewHolderForLayoutPosition(i)
-//            if (vh?.itemView == null) {
-//                continue
-//            }
-//            val location = IntArray(2)
-//            vh.itemView.getLocationOnScreen(location)
-//            val x = location[0]
-//            val halfWidth = vh.itemView.width * .5
-//            val rightSide = x + halfWidth
-//            val leftSide = x - halfWidth
-//            val isInMiddle = screenWidth * .5 in leftSide..rightSide
-//            if (isInMiddle) {
-//                // "i" is your middle index and implement selecting it as you want
-//                // optionsAdapter.selectItemAtIndex(i)
-//                return
-//            }
-//        }
-//    }
 
     private fun initColorsRecyclerAdapter() {
         val adapter = ProdColorsRecyclerAdapter()

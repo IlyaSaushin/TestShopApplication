@@ -11,6 +11,4 @@ data class UserLoginDb(
     @ColumnInfo(name = "firstname") val firstName: String,
     @ColumnInfo(name = "lastname") val lastName: String,
     @ColumnInfo(name = "email") val email: String,
-) {
-    fun <T> mapTpData(mapper: UserLoginDbToDataMapper<T>) = mapper.mapToData(firstName, lastName, email)
-}
+)
