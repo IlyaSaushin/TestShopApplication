@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:cardCornerRadius="15dp"
+    android:layout_marginStart="@dimen/margin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/auth_edittext_hint_color"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/good_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/games"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/good_title"
+            app:layout_constraintStart_toStartOf="@id/good_title"
+            android:background="@drawable/good_type_text_background"
+            android:paddingHorizontal="4dp"
+            android:layout_marginBottom="6dp"
+            />
+
+        <TextView
+            android:id="@+id/good_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="100dp"
+            android:text="@string/play_station_5_console"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montesserat_medium"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/price"
+            app:layout_constraintBottom_toTopOf="@id/price"
+            android:layout_marginBottom="6dp"
+            />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_90_000"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:fontFamily="@font/montesserat_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="@dimen/margin"
+            />
+
+        <ImageView
+            android:id="@+id/add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
     namespace 'com.earl.testshopapplication'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.earl.testshopapplication"
         minSdk 28
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -30,15 +31,39 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation project (":common:utils")
+    implementation project (":profile_feature")
+    implementation project (":authorization_feature")
+    implementation project (":shop_feature")
+
+    implementation Dependencies.core
+    implementation Dependencies.appCompat
+    implementation Dependencies.material
+    implementation Dependencies.constraintLayout
+    testImplementation TestDependencies.junit
+    androidTestImplementation TestDependencies.androidJunit
+    androidTestImplementation TestDependencies.androidEspresso
+
+    // dagger2
+    implementation Dagger2.dagger
+    kapt Dagger2.daggerCompiler
+
+    // retrofit
+    implementation Retrofit.retrofit
+    implementation Retrofit.retrofitGsonConverter
+    implementation Retrofit.retrofitCoroutineAdapter
+    implementation Retrofit.okHttpLoggingInterceptor
+
+    // room
+    implementation Room.roomRuntime
+    kapt Room.roomKapt
+    implementation Room.roomKtx
+    implementation Room.roomTest
 }

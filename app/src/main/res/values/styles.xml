@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Style for  custom tab view-->
+    <style name="MyTitleStyle" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/auth_edittext_hint_color</item>
+    </style>
+
+    <!--Style for TabLayout  -->
+    <style name="MyTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#E97E78</item>
+    </style>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@drawable/tab_colors_selector</item>
+    </style>
+</resources>
